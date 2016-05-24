@@ -17,9 +17,9 @@ def upload(args):
 		parentId = "syn6038475"
 		pipeline = ["syn6038932","syn6038912"]
 	elif args.dataType == "exparray":
-		#parentId = "syn6038915"
+		parentId = "syn6038915"
 		##vv testing vvv
-		parentId = "syn6117215"
+		#parentId = "syn6117215"
 		pipeline = ["syn6038930","syn6038917"]
 	elif args.dataType == "exome":
 		parentId = "syn6115597"
