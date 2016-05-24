@@ -3,8 +3,10 @@
 ### Installing dependencies
 
 *Installing pip*
+
 ubuntu:
 `sudo apt-get install python-pip`
+
 linux:
 `sudo yum install python-pip`
 
