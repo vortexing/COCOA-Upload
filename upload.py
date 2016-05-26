@@ -45,24 +45,30 @@ def annotate(args,syn):
 def upload(args,syn):
 	if args.dataType == "rnaseq":
 		parentId = "syn6034916"
-		pipeline = ["syn6035385","syn6035389","syn6035387"]
+		pipeline = "syn6126122"
 		dataType = "RNASeq"
 	elif args.dataType == "dnaseq":
 		parentId = "syn6034751"
-		pipeline = ["syn6039277","syn6034908","syn6034910","syn6034909","syn6034913"]
+		pipeline = "syn6126123"
 		dataType = "TargDNASeq"
 	elif args.dataType == "snparray":
 		parentId = "syn6038475"
-		pipeline = ["syn6038932","syn6038912"]
+		pipeline = "syn6126121"
 		dataType = "SNParray"
 	elif args.dataType == "exparray":
 		parentId = "syn6038915"
-		pipeline = ["syn6038930","syn6038917"]
+		pipeline = "syn6126120"
 		dataType = "expression_microarray"
 	elif args.dataType == "exome":
 		parentId = "syn6115597"
 	else:
 		raise ValueError("dataType needs to be rnaseq/dnaseq/snparray/exparray/exome")
+	if args.workflow is not None:
+		workflow = syn.get(pipeline,downloadFile=False)
+		workflow.path = args.workflow
+		workflow.name = os.path.basename(args.workflow)
+		workflow = syn.store(workflow)
+		pipeline = workflow.id
 	fileEnt = File(args.input,parent=parentId)
 	fileEnt.annotations = temp.to_dict('index').values()[0]
 	fileEnt.dataType = dataType
@@ -100,6 +106,8 @@ if __name__ == "__main__":
 						help='Sample ID of specific file')
 	parser_upload.add_argument('--dataType','-d',metavar='rnaseq', type=str, required=True,
 						help='Choose between rnaseq/dnaseq/snparray/exparray/exome')
+	parser_upload.add_argument('--workflow','-w',metavar='workflow.sh', type=str, default=None,
+						help='Workflow used to generate file')
 	parser_upload.set_defaults(func=upload)
 
 
