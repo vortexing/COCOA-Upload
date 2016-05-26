@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-#import pandas as pd 
 import synapseclient
 import argparse
 import os
@@ -116,4 +115,7 @@ if __name__ == "__main__":
 
 	args = parser.parse_args()
 	perform_main(args)
+
+
+#Add a test parameter
 	

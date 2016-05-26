@@ -19,7 +19,7 @@ pip install pandas
 ### To upload files to synapse
 
 ```
-./upload.py upload --input /path/to/file --sampleId sample123 --dataType exparray
+./upload.py --synapse_user user --password password upload --input /path/to/file --sampleId sample123 --dataType exparray
 
 #View ./upload.py upload -h for more help
 ```
