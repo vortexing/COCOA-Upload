@@ -16,10 +16,19 @@ pip install synapseclient
 pip install pandas 
 ```
 
-### How to run 
+### To upload files to synapse
 
 ```
-./upload.py -i microarray/ -a microarray/Pipeline/Microarray-Synapse-Annotations.csv --dataType exparray
+./upload.py upload --input /path/to/file --sampleId sample123 --dataType exparray
 
-#View ./upload.py -h for more help
+#View ./upload.py upload -h for more help
+```
+
+### To annotate file in synapse
+
+
+```
+./upload.py annotate --annotation sample123 --dataType exparray
+
+#View ./upload.py annotate -h for more help
 ```
