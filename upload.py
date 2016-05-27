@@ -61,6 +61,8 @@ def upload(args,syn):
 		dataType = "expression_microarray"
 	elif args.dataType == "exome":
 		parentId = "syn6115597"
+		dataType = "exome"
+		pipeline = ""
 	else:
 		raise ValueError("dataType needs to be rnaseq/dnaseq/snparray/exparray/exome")
 	if args.workflow is not None:
