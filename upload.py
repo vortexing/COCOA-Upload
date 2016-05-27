@@ -100,8 +100,8 @@ if __name__ == "__main__":
 
 	parser_upload = subparsers.add_parser('upload',
 			help='Upload COCOA files')
-	parser_upload.add_argument('--input','-i',metavar='/path/to/data', type=str, required=True,
-						help='Directory containing all the files')
+	parser_upload.add_argument('--input','-i',metavar='/path/to/data.txt', type=str, required=True,
+						help='File path')
 	parser_upload.add_argument('--sampleId','-s',metavar='sample123', type=str, required=True,
 						help='Sample ID of specific file')
 	parser_upload.add_argument('--dataType','-d',metavar='rnaseq', type=str, required=True,
