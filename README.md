@@ -13,15 +13,19 @@ linux:
 *Installing python modules*
 ```
 pip install synapseclient
-pip install pandas 
+#pip install pandas 
+#pandas is only used for annotations.  This can be ignored for uploading
 ```
 
 ### To upload files to synapse
 
 ```
-./upload.py --synapse_user user --password password upload --input /path/to/file --sampleId sample123 --dataType exparray
+./upload.py --synapse_user user --password password upload --input /path/to/file --sampleId sample123 --dataType exparray --workflow workflow.sh
+
+#The --workflow parameter is not required except for the initial upload or updates of the workflow file
 
 #View ./upload.py upload -h for more help
+
 ```
 
 ### To annotate file in synapse
