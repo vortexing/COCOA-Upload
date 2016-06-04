@@ -32,7 +32,7 @@ pip install synapseclient
 
 
 ```
-./upload.py annotate --annotation sample123 --dataType exparray
+./upload.py annotate sample123.csv exparray
 
 #View ./upload.py annotate -h for more help
 ```

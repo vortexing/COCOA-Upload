@@ -117,9 +117,9 @@ if __name__ == "__main__":
 			help='Annotate COCOA files')
 	#parser_annotate.add_argument('--synId',metavar='syn1234', type=str, required=True,
 #						help='synapse Id of folder with entities')
-	parser_annotate.add_argument('--annotation','-a',metavar='/path/to/annotations.csv', type=str, required=True,
+	parser_annotate.add_argument('annotation',metavar='/path/to/annotations.csv', type=str,
 						help='All the REDCap annotations')
-	parser_annotate.add_argument('--dataType','-d',metavar='rnaseq', type=str, required=True,
+	parser_annotate.add_argument('dataType',metavar='rnaseq', type=str,
 						help='Choose between rnaseq/dnaseq/snparray/exparray/exome')
 	parser_annotate.set_defaults(func=annotate)
 
